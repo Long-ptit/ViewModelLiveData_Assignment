@@ -21,13 +21,4 @@ public class MainActivity extends AppCompatActivity {
 //		getData();
 	}
 
-	private void getData() {
-		Thread thread = new Thread(() -> {
-			MyDataBase myDataBase = MyDataBase.getInstance(this);
-			StudentDAO studentDAO = myDataBase.studentDAO();
-			studentDAO.insertStudent(new Student(1, "2", "3"));
-		//	Log.d(TAG, "getData: " + );
-		});
-		thread.start();
-	}
 }

@@ -14,27 +14,28 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.baseproject.R;
+import com.example.baseproject.databinding.FragmentAddStudentBinding;
+import com.example.baseproject.databinding.FragmentDetailStudentBinding;
 import com.example.baseproject.room.Student;
 import com.example.baseproject.viewmodel.StudentHomeViewModel;
 
 public class DetailStudentFragment extends Fragment {
 
     private StudentHomeViewModel mStudentHomeViewModel;
+    private FragmentDetailStudentBinding mBinding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_detail_student, container, false);
-
+        mBinding = FragmentDetailStudentBinding.inflate(inflater, container, false);
         mStudentHomeViewModel = new ViewModelProvider(requireActivity()).get(StudentHomeViewModel.class);
-        TextView textView = view.findViewById(R.id.tv_data);
         mStudentHomeViewModel.getCurrentStudent().observe(requireActivity(), new Observer<Student>() {
             @Override
             public void onChanged(Student student) {
-                textView.setText(student.getName());
+                mBinding.tvName.setText(student.getName());
+                mBinding.tvAge.setText("Age: " + student.getAge());
             }
         });
-        return view;
+        return mBinding.getRoot();
     }
 }

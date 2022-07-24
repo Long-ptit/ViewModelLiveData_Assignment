@@ -17,7 +17,16 @@ public class StudentHomeViewModel extends AndroidViewModel {
     private StudentRepository mStudentRepository;
     private LiveData<List<Student>> mListStudentLiveData;
     private MutableLiveData<Student> mCurrentStudentLiveData = new MutableLiveData<>(new Student());
+    private MutableLiveData<String> mNameLiveData = new MutableLiveData<>();
+    private MutableLiveData<String> mAgeLiveData = new MutableLiveData<>();
 
+    public MutableLiveData<String> getNameLiveData() {
+        return mNameLiveData;
+    }
+
+    public MutableLiveData<String> getAgeLiveData() {
+        return mAgeLiveData;
+    }
 
     public LiveData<Student> getCurrentStudent() {
         return mCurrentStudentLiveData;
@@ -41,7 +50,10 @@ public class StudentHomeViewModel extends AndroidViewModel {
 
 
 
-    public void addStudent(Student student) {
+    public void addStudent() {
+        Student student = new Student();
+        student.setAge(Integer.valueOf(mAgeLiveData.getValue()));
+        student.setName(mNameLiveData.getValue());
         mStudentRepository.insertStudent(student);
     }
 }

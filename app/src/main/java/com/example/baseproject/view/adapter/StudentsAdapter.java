@@ -44,11 +44,13 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.mBinding.tvName.setText(mListData.get(position).getName());
+        Student student = mListData.get(position);
+        holder.mBinding.tvName.setText(student.getName());
+        holder.mBinding.tvAge.setText("Age: " + student.getAge());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.onClickStudent(mListData.get(position));
+                mListener.onClickStudent(student);
             }
         });
     }

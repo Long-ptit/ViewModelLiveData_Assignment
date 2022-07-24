@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidApplication/RoomViewModel/BaseProject/app/src/main/res/drawable/bg_edt.xml" value="0.1" />
+        <entry key="..\:/AndroidApplication/RoomViewModel/BaseProject/app/src/main/res/drawable/ic_add.xml" value="0.1675" />
         <entry key="..\:/AndroidApplication/RoomViewModel/BaseProject/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
         <entry key="..\:/AndroidApplication/RoomViewModel/BaseProject/app/src/main/res/layout/activity_student_home.xml" value="0.264" />
         <entry key="..\:/AndroidApplication/RoomViewModel/BaseProject/app/src/main/res/layout/fragment_add_student.xml" value="0.25416666666666665" />
-        <entry key="..\:/AndroidApplication/RoomViewModel/BaseProject/app/src/main/res/layout/fragment_detail_student.xml" value="0.1" />
+        <entry key="..\:/AndroidApplication/RoomViewModel/BaseProject/app/src/main/res/layout/fragment_detail_student.xml" value="0.264" />
         <entry key="..\:/AndroidApplication/RoomViewModel/BaseProject/app/src/main/res/layout/fragment_home_student.xml" value="0.25416666666666665" />
-        <entry key="..\:/AndroidApplication/RoomViewModel/BaseProject/app/src/main/res/layout/item_student.xml" value="0.1361111111111111" />
+        <entry key="..\:/AndroidApplication/RoomViewModel/BaseProject/app/src/main/res/layout/item_student.xml" value="0.264" />
       </map>
     </option>
   </component>

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.baseproject.viewmodel.StudentHomeViewModel" />
+    </data>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/dp10"
         android:orientation="vertical"
         tools:context=".view.AddStudentFragment">
 
@@ -12,21 +18,37 @@
         <EditText
             android:id="@+id/edt_name"
             android:layout_width="match_parent"
+            android:padding="@dimen/dp10"
+            android:background="@drawable/bg_edt"
+            android:layout_marginTop="@dimen/dp10"
             android:layout_height="wrap_content"
-            android:hint="enter name" />
+            android:text="@={viewModel.nameLiveData}"
+            android:hint="@string/please_enter_name" />
 
 
         <EditText
             android:id="@+id/edt_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="enter age" />
+            android:layout_marginTop="@dimen/dp10"
+            android:background="@drawable/bg_edt"
+            android:padding="@dimen/dp10"
+            android:inputType="number"
+            android:text="@={viewModel.ageLiveData}"
+            android:hint="@string/please_enter_age" />
 
         <Button
+            android:layout_marginTop="@dimen/dp10"
             android:id="@+id/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="save" />
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
     </LinearLayout>
 
 </layout>
