@@ -35,7 +35,6 @@ public class AddStudentFragment extends Fragment {
 
         mBinding.btnSave.setOnClickListener(v -> {
             mStudentHomeViewModel.addStudent();
-            Navigation.findNavController(mBinding.getRoot()).navigateUp();
         });
 
         mBinding.btnBack.setOnClickListener(v -> {

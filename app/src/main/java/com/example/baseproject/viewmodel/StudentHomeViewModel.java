@@ -1,11 +1,13 @@
 package com.example.baseproject.viewmodel;
 
 import android.app.Application;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.navigation.Navigation;
 
 import com.example.baseproject.room.Student;
 import com.example.baseproject.room.StudentRepository;
@@ -19,6 +21,11 @@ public class StudentHomeViewModel extends AndroidViewModel {
     private MutableLiveData<Student> mCurrentStudentLiveData = new MutableLiveData<>(new Student());
     private MutableLiveData<String> mNameLiveData = new MutableLiveData<>();
     private MutableLiveData<String> mAgeLiveData = new MutableLiveData<>();
+    private MutableLiveData<Student> mEditStudent = new MutableLiveData<>(new Student());
+
+    public MutableLiveData<Student> getEditStudent() {
+        return mEditStudent;
+    }
 
     public MutableLiveData<String> getNameLiveData() {
         return mNameLiveData;
@@ -51,9 +58,12 @@ public class StudentHomeViewModel extends AndroidViewModel {
 
 
     public void addStudent() {
-        Student student = new Student();
-        student.setAge(Integer.valueOf(mAgeLiveData.getValue()));
-        student.setName(mNameLiveData.getValue());
-        mStudentRepository.insertStudent(student);
+//        if (mEditStudent.getValue().getAge() <= 0){
+//            Toast.makeText(getApplication(), "Nhap sai r", Toast.LENGTH_SHORT).show();
+//            return;
+//            Navigation.findNavController().navigateUp();
+//        }
+        mStudentRepository.insertStudent(mEditStudent.getValue());
+        mEditStudent.postValue(new Student());
     }
 }

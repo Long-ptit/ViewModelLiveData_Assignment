@@ -22,7 +22,7 @@
             android:background="@drawable/bg_edt"
             android:layout_marginTop="@dimen/dp10"
             android:layout_height="wrap_content"
-            android:text="@={viewModel.nameLiveData}"
+            android:text="@={viewModel.editStudent.name}"
             android:hint="@string/please_enter_name" />
 
 
@@ -34,7 +34,7 @@
             android:background="@drawable/bg_edt"
             android:padding="@dimen/dp10"
             android:inputType="number"
-            android:text="@={viewModel.ageLiveData}"
+            android:text="@={viewModel.editStudent.age + ``}"
             android:hint="@string/please_enter_age" />
 
         <Button

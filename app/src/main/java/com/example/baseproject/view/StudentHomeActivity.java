@@ -25,20 +25,5 @@ public class StudentHomeActivity extends AppCompatActivity {
         mStudentHomeViewModel = new ViewModelProvider(this).get(StudentHomeViewModel.class);
         mBinding.setViewModel(mStudentHomeViewModel);
         mBinding.setLifecycleOwner(this);
-        mStudentHomeViewModel.getListStudents().observe(this,
-                students ->
-                Log.d(TAG, "onChanged: " + students.size()));
-//        findViewById(R.id.add_student).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mStudentHomeViewModel.addStudent();
-//            }
-//        });
-//        mStudentHomeViewModel.getName().observe(this, new Observer<String>() {
-//            @Override
-//            public void onChanged(String s) {
-//                Log.d(TAG, "onChanged: " + s);
-//            }
-//        });
     }
 }

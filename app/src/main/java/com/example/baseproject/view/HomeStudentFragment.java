@@ -50,6 +50,7 @@ public class HomeStudentFragment extends Fragment implements StudentsAdapter.Cal
     }
 
     private void setOnClick() {
+        mStudentHomeViewModel.getEditStudent().setValue(new Student());
         mBinding.btnAddStudent.setOnClickListener(v -> {
             Navigation
                     .findNavController(mBinding.getRoot())
